@@ -10,5 +10,3 @@
   (let ((radianes (grados-radianes angulo)))
     ;; Imprimir el resultado
     (format t "El ángulo en radianes es: ~A~%" radianes)))
-
-
