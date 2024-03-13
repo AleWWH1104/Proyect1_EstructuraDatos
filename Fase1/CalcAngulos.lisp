@@ -1,6 +1,6 @@
 ;; Función para convertir grados a radianes
 (defun grados-radianes (grados)
-  (* grados (/ pi 180)))
+  (* grados (/ pi 80)))
 
 ;; Ingresar un ángulo en grados
 (format t "Ingrese un ángulo en grados: ")
