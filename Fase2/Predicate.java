@@ -47,7 +47,7 @@ public class Predicate<T> {
     }
 
     @SuppressWarnings("hiding")
-    public class Comparator<T> implements Iestructuras<T>{
+    public class Ccomparator<T> implements Iestructuras<T>{
         @Override
         public void execute(String expresion) {
             // TODO Auto-generated method stub

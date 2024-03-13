@@ -26,6 +26,8 @@ public class FactoryEstructuras<T> {
                 return new Predicate<>().new EQUALS<T>();
             case "atom":
                 return new Predicate<>().new Atom<T>();
+            case "comparator":
+                return new Predicate<>().new Ccomparator<T>();
             case "cond":
                 return new Conditions<>();
             default:
