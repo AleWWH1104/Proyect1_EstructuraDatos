@@ -8,7 +8,7 @@ import java.util.List;
 
 public class FileManager {
     
-    public List<String> readInstructionsFromFile(String filePath) {
+    public List<String> readFile(String filePath) {
         List<String> instructions = new ArrayList<>();
 
         try (BufferedReader reader = new BufferedReader(new FileReader(filePath))) {
