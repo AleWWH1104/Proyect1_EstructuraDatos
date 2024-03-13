@@ -1,3 +1,5 @@
+package Fase2;
+
 import java.util.Stack;
 
 public class Defun {
