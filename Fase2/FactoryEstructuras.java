@@ -1,7 +1,5 @@
 package Fase2;
 
-
-
 public class FactoryEstructuras<T> {
     
     //Construye una instancia de {Factory} inicializando las instancias de {SetQ} y {Defun}.
