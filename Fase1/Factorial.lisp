@@ -1,8 +1,8 @@
 (
     defun factorial (num)
-        (if (= num 0) 1
-        (* num (factorial (- num 1)))
+        (if (= num 0) 
+        (* num (factorial (- num )))
         )
 )
 
-(print (factorial 3))
+(print (factorial ))
