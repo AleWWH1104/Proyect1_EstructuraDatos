@@ -1,59 +1,32 @@
 package Fase2;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.ArrayList;
+import java.util.List;
 
 public class SetQ {
+    private String variableName;
+    private Object value;
+    private List<String> instructions;
 
-    private static Map<String, Double> variables = new HashMap<>();
+    public SetQ(String variableName, Object value) {
+        this.variableName = variableName;
+        this.value = value;
+        this.instructions = new ArrayList<>();
+    }
 
-    public static double evaluate(String expression) {
-        String[] tokens = expression.split("\\s+");
+    public String getVariableName() {
+        return variableName;
+    }
 
-        if (tokens.length < 3 || !tokens[0].equals("SETQ")) {
-            System.out.println("Expresión SETQ incorrecta.");
-            return Double.MIN_VALUE;
-        }
-
-        String variableName = tokens[1];
-        double value = calculate(tokens, 2);
-
-        variables.put(variableName, value);
+    public Object getValue() {
         return value;
     }
 
-    private static double calculate(String[] tokens, int startIndex) {
-        if (startIndex >= tokens.length) {
-            System.out.println("Expresión incorrecta.");
-            return Double.MIN_VALUE;
-        }
-
-        String token = tokens[startIndex];
-
-        if (isNumeric(token)) {
-            return Double.parseDouble(token);
-        } else if (variables.containsKey(token)) {
-            return variables.get(token);
-        } else {
-            System.out.println("Variable no definida: " + token);
-            return Double.MIN_VALUE;
-        }
+    public void addInstruction(String instruction) {
+        instructions.add(instruction);
     }
 
-    private static boolean isNumeric(String str) {
-        try {
-            Double.parseDouble(str);
-            return true;
-        } catch (NumberFormatException e) {
-            return false;
-        }
-    }
-
-    public static void main(String[] args) {
-        String expression1 = "SETQ x 5";
-        String expression2 = "SETQ y (+ 3 4)";
-
-        System.out.println("Resultado de la expresión 1: " + evaluate(expression1));
-        System.out.println("Resultado de la expresión 2: " + evaluate(expression2));
+    public void execute(String input) {
+          
     }
 }

@@ -1,6 +1,27 @@
+package Fase2;
+
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.Stack;
 
 public class PrefixCalculator {
+
+    public static void main(String[] args) {
+        try {
+            BufferedReader reader = new BufferedReader(new FileReader("expresiones.txt"));
+            String line;
+            while ((line = reader.readLine()) != null) {
+                String[] expression = line.split("\\s+"); // Separar la línea por espacios
+                int result = calculatePrefix(expression);
+                System.out.println("Expresión: " + line);
+                System.out.println("Resultado: " + result);
+            }
+            reader.close();
+        } catch (IOException e) {
+            System.out.println("Error al leer el archivo: " + e.getMessage());
+        }
+    }
 
     public static int calculatePrefix(String[] expression) throws IllegalArgumentException {
         if (expression == null || expression.length == 0) {
@@ -58,17 +79,6 @@ public class PrefixCalculator {
             return true;
         } catch (NumberFormatException e) {
             return false;
-        }
-    }
-
-    public static void main(String[] args) {
-        String[] expression = {"+", "3", "*", "4", "2"}; // + 3 * 4 2
-
-        try {
-            int result = calculatePrefix(expression);
-            System.out.println("Resultado de la calculadora prefix: " + result);
-        } catch (IllegalArgumentException | ArithmeticException e) {
-            System.out.println("Error: " + e.getMessage());
         }
     }
 }

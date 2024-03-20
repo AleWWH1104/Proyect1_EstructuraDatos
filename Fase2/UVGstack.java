@@ -7,7 +7,7 @@ package Fase2;
  * @author Jonathan Díaz
  * @author Anggie Quezada
  */
-public interface UVGStack<T> {
+public interface UVGstack<T> {
 
     /**
      * Agrega un elemento a la pila.
