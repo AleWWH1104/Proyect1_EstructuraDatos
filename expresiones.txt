@@ -1,0 +1,8 @@
+SetQ x 10
+SetQ y 20
+Execute x
+Execute y
+(+ 3 5)
+(* 4 6)
+(- 10 3)
+(/ 20 4)

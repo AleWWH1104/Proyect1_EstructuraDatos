@@ -26,7 +26,8 @@ public class SetQ {
         instructions.add(instruction);
     }
 
-    public void execute(String input) {
-          
+    public String execute(String input) {
+   
+        return "Instrucciones ejecutadas para la variable '" + variableName + "'";
     }
 }

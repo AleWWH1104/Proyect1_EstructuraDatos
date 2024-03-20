@@ -1,25 +1,24 @@
 package Fase2;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
 import java.util.Stack;
 
 public class PrefixCalculator {
 
     public static void main(String[] args) {
-        try {
-            BufferedReader reader = new BufferedReader(new FileReader("expresiones.txt"));
-            String line;
-            while ((line = reader.readLine()) != null) {
-                String[] expression = line.split("\\s+"); // Separar la línea por espacios
-                int result = calculatePrefix(expression);
-                System.out.println("Expresión: " + line);
-                System.out.println("Resultado: " + result);
-            }
-            reader.close();
-        } catch (IOException e) {
-            System.out.println("Error al leer el archivo: " + e.getMessage());
+        FileManager fileManager = new FileManager();
+        String fileContent = fileManager.readFile("expresiones.txt");
+        String[] lines = fileContent.split("\\r?\\n");
+
+        for (String line : lines) {
+            // Separar la línea por espacios
+            String[] expression = line.split("\\s+");
+            
+            // Realizar las operaciones necesarias para procesar la expresión
+            int result = calculatePrefix(expression);
+            
+            // Imprimir resultados
+            System.out.println("Expresión: " + line);
+            System.out.println("Resultado: " + result);
         }
     }
 
