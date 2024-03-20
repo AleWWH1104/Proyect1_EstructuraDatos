@@ -1,4 +1,4 @@
-(setq x 5)
+(setq x (+ 1 2))
 (defun factorial (n)
   (if (= n 0) ; Si n es igual a 0
       1        ; Devuelve 1 (caso base)
@@ -7,4 +7,4 @@
 
 
 
-(print (factorial 5))
+(print (factorial x))

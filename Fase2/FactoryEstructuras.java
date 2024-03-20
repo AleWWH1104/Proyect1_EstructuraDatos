@@ -1,25 +1,21 @@
 package Fase2;
 
-
-
 public class FactoryEstructuras<T> {
-    
-    //Construye una instancia de {Factory} inicializando las instancias de {SetQ} y {Defun}.
-    public FactoryEstructuras(){
-        
+
+    public FactoryEstructuras() {
+
     }
 
-    //Crea y devuelve una instancia de {InterfaceFactory} basada en la palabra reservada proporcionada.
     public Iestructuras<T> createStack(String implementacion) {
         switch (implementacion) {
             case "calculadora":
                 return new Calculator<>();
             case "defun":
-                return  new Defun<>();
+                return new Defun<T>();
             case "quote":
                 return new Quote<>();
             case "setQ":
-                return new Quote<>();
+                return new SetQ<>();
             case "list":
                 return new Predicate<>().new Listas<T>();
             case "equal":

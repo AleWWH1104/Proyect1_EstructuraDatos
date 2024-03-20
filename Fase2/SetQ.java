@@ -3,7 +3,7 @@ package Fase2;
 import java.util.HashMap;
 import java.util.Map;
 
-public class Setq {
+public class SetQ {
 
     private static Map<String, Double> variables = new HashMap<>();
 

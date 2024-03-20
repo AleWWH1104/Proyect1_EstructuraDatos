@@ -1,3 +1,12 @@
+(+ (foo 3) (* 2 3))
+
+[(, +, (, foo, 3, ), (, 2, 3,). )]
+[+, [ foo, ]]
+[ +, [ +, x, 3], [*, 2, 3] ]
+(foo (1 2))
+[foo, 1, 2]
+[foo -> (x y) (codigo)]
+
 ;; Función para convertir grados a radianes
 (defun grados-radianes (grados)
   (* grados (/ pi 80)))

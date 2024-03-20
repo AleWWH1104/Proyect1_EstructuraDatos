@@ -1,5 +1,7 @@
 package Fase2;
 
-public interface Iestructuras<T>  {
-    public void execute(String expresion);
+import java.util.List;
+
+public interface Iestructuras<T> {
+    public void execute(List<String> expresion);
 }
