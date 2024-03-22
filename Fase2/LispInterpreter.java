@@ -8,5 +8,11 @@ public class LispInterpreter {
         Parser parsear = new Parser();
         List<Object> tokens = parsear.parse(expresion);
         System.out.println(tokens);
+        FactoryEstructuras factory = new FactoryEstructuras<>();    
+        Iestructuras implementacion = factory.crearImplementacion(tokens);
+        Environment environment = new Environment();
+        Object resultado = implementacion.execute(environment);
+        System.err.println("Resultado: " + resultado);
+
     }
 }
