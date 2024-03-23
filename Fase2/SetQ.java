@@ -1,9 +1,10 @@
 package Fase2;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
-public class Setq {
+public class SetQ<T> implements Iestructuras<T>{
 
     private static Map<String, Double> variables = new HashMap<>();
 
@@ -55,5 +56,11 @@ public class Setq {
 
         System.out.println("Resultado de la expresión 1: " + evaluate(expression1));
         System.out.println("Resultado de la expresión 2: " + evaluate(expression2));
+    }
+
+    @Override
+    public Object execute(List<Object> tokens, Environment environment) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'execute'");
     }
 }
