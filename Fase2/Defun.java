@@ -4,7 +4,8 @@ public class Defun<T> implements Iestructuras<T> {
 
     @Override
     public void execute(String expresion) {
-        System.out.println("Definiendo función: " + expresion);
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'execute'");
     }
     
 }
