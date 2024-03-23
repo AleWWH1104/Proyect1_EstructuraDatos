@@ -9,6 +9,7 @@ public class FactoryEstructuras<T extends Number> {
                 case "defun":
                     return new Defun<>();
                 case "quote":
+                case "'":
                     return new Quote<>();
                 case "cond":
                     return new Conditions<>();
