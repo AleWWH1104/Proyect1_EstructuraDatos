@@ -8,23 +8,19 @@ import java.util.Map;
 class Defun<T> implements Iestructuras<T> {
     Environment environment = new Environment();
     String name;
-    List<String> instructions;
+    List<Object> instructions;
     Map<String, Object> params;
-    Object finalValue;
+    Object value;
 
-    public void setInstructions(List<String> instructions) {
+    public void setInstructions(List<Object> instructions) {
         this.instructions = instructions;
-    }
-
-    public Object getFinalValue() {
-        return finalValue;
     }
 
     public Defun(String name, List<String> params) {
         this.name = name;
         this.params = new HashMap<>();
         for (String param : params) {
-            this.params.put(param, "none");
+            this.params.put(param, null);
         }
     }
 
@@ -32,7 +28,9 @@ class Defun<T> implements Iestructuras<T> {
     }
 
     @Override
-    public void execute(List<String> expression) {
+    public Object execute(List<Object> expression) {
+        value = evaluar(environment, expression);
+        return value;
 
     }
 
