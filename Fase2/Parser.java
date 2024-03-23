@@ -12,29 +12,26 @@ public class Parser {
             String token = tokenizer.nextToken().trim();
             if (!token.isEmpty()) {
                 if (token.equals("(")) {
-                    tokens.add(parseList(tokenizer));
+                    // No agregues una lista al parsear una lista, simplemente continúa con el proceso
+                    parseList(tokenizer, tokens);
                 } else {
                     tokens.add(token);
                 }
             }
         }
         
-        if (tokens.size() > 0 && tokens.get(0).equals("(")) {
-            tokens.remove(0);
-            tokens.remove(tokens.size() - 1);
-        }
-        
         return tokens;
     }
     
-    private List<Object> parseList(StringTokenizer tokenizer) {
-        List<Object> list = new ArrayList<>();
-        
+    private void parseList(StringTokenizer tokenizer, List<Object> list) {
         while (tokenizer.hasMoreTokens()) {
             String token = tokenizer.nextToken().trim();
             if (!token.isEmpty()) {
                 if (token.equals("(")) {
-                    list.add(parseList(tokenizer));
+                    // Al encontrar una nueva lista, inicia el proceso de parseo recursivamente
+                    List<Object> sublist = new ArrayList<>();
+                    parseList(tokenizer, sublist);
+                    list.add(sublist);  // Agrega la sublist directamente a la lista principal
                 } else if (token.equals(")")) {
                     break;
                 } else {
@@ -42,6 +39,5 @@ public class Parser {
                 }
             }
         }
-        return list;
     }   
 }
