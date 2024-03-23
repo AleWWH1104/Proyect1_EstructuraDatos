@@ -1,12 +1,5 @@
 package Fase2;
-<<<<<<< HEAD
-
-import java.util.HashMap;
-import java.util.Map;
-
-=======
 import java.util.List;
->>>>>>> main
 public class LispInterpreter {
     public static void main(String[] args) {
         FileManager fileManager = new FileManager();
@@ -19,5 +12,9 @@ public class LispInterpreter {
         Object result = evaluador.evaluarExpresion(tokens);
         System.out.println("Resultado: " + result);
     }
+    
+    public Object evaluarExpresionAritmetica(List<Object> expresion) {
+        OperacionAritmetica operacion = new OperacionAritmetica(expresion);
+        return operacion.evaluar();
+    }
 }
-
