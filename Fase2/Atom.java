@@ -8,7 +8,7 @@ public class Atom<T> implements Iestructuras<T> {
     public Object execute(List<Object> tokens, Environment environment) {
         // Verificar que la lista de tokens tenga al menos un elemento
         if (tokens.isEmpty()) {
-            throw new IllegalArgumentException("Atom operation requires at least one operand.");
+            throw new IllegalArgumentException("No hay Atom/ estructura vacia");
         }
         
         // Obtener el primer elemento de la lista de tokens
