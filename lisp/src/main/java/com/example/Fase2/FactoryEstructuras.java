@@ -28,13 +28,8 @@ public class FactoryEstructuras<T extends Number> {
                 case "<=":
                 case ">=":
                     return new Comparador<>();
-<<<<<<< HEAD
                 case "setq":
                     return new SetQ<>();
-=======
-                case "atom":
-                    return new Atom<>();
->>>>>>> main
                 default:
                     return new Valor<>();
             }
