@@ -2,14 +2,30 @@ package com.example.Fase2;
 
 import java.util.List;
 
-/* Compara la igualdad de dos operandos y devuelve "T" si son iguales, o "NIL" si son diferentes.*/
+/**
+ * Esta clase representa una estructura que compara la igualdad de dos
+ * operandos.
+ * Devuelve "T" si son iguales, o "NIL" si son diferentes.
+ *
+ * @param <T> Tipo genérico para la estructura EQUALS.
+ */
 public class EQUALS<T> implements Iestructuras<T> {
 
+    /**
+     * Método para ejecutar la operación de igualdad y devolver el resultado.
+     *
+     * @param expresion   Lista que contiene la operación EQUALS y los dos
+     *                    operandos.
+     * @param environment Entorno de ejecución.
+     * @return "T" si los operandos son iguales, "NIL" si son diferentes.
+     * @throws IllegalArgumentException si la expresión no contiene exactamente dos
+     *                                  operandos.
+     */
     @SuppressWarnings("unchecked")
     @Override
     public Object execute(List<Object> expresion, Environment environment) {
         if (expresion.size() != 3) {
-            throw new IllegalArgumentException("EQUALS operation requires exactly two operands.");
+            throw new IllegalArgumentException("La operación EQUALS requiere exactamente dos operandos.");
         }
 
         Object leftOperand = expresion.get(1);

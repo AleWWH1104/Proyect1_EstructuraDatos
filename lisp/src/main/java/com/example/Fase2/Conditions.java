@@ -1,8 +1,26 @@
 package com.example.Fase2;
+
 import java.util.List;
 
+/**
+ * Esta clase representa la estructura de condiciones utilizada para evaluar
+ * diferentes opciones y ejecutar la correspondiente.
+ *
+ * @param <T> Tipo genérico para la estructura de condiciones.
+ */
 public class Conditions<T> implements Iestructuras<T> {
 
+    /**
+     * Método para ejecutar las condiciones y devolver el resultado de la primera
+     * condición que se cumpla.
+     *
+     * @param tokens      Lista de tokens que representan las condiciones y las
+     *                    instrucciones asociadas.
+     * @param environment Entorno de ejecución.
+     * @return Resultado de la ejecución de la primera condición que se cumple, o
+     *         una cadena vacía si ninguna condición se cumple.
+     * @throws IllegalArgumentException si la lista de tokens está vacía.
+     */
     @Override
     public Object execute(List<Object> tokens, Environment environment) {
         if (tokens.isEmpty()) {
@@ -24,7 +42,8 @@ public class Conditions<T> implements Iestructuras<T> {
                 }
             }
         }
-        // If none of the conditions evaluate to true, return null
+        // Si ninguna de las condiciones se evalúa como verdadera, devuelve una cadena
+        // vacía
         return "";
     }
 }

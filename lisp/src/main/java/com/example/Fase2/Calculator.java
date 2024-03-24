@@ -1,7 +1,6 @@
 package com.example.Fase2;
 
 import java.util.List;
-import java.util.Stack;
 
 //Ejecuta la expresión matemática en notación prefija representada por una lista de tokens.
 public class Calculator<T> implements Iestructuras<T> {
