@@ -1,4 +1,4 @@
-(list 1 2 3 (list 1 2))
-(list 1 2 3 )
-(list 'a 'b)
+(9)
+(hola)
+((list 1 2 3))
 

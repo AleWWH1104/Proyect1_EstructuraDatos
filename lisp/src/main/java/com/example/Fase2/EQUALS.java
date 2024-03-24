@@ -1,6 +1,7 @@
 package com.example.Fase2;
 import java.util.List;
 
+/* Compara la igualdad de dos operandos y devuelve "T" si son iguales, o "NIL" si son diferentes.*/
 public class EQUALS<T> implements Iestructuras<T> {
 
     @SuppressWarnings("unchecked")

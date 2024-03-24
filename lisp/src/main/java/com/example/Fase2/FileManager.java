@@ -3,6 +3,9 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 
+/**
+ * Clase FileManager para leer una expresión desde un archivo de texto.
+ */
 public class FileManager {
     public String leerExpresion(String filePath) {
         StringBuilder stringBuilder = new StringBuilder();

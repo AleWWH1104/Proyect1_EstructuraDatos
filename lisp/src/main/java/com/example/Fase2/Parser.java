@@ -3,6 +3,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.StringTokenizer;
 
+/**
+ * Clase Parser que proporciona métodos para analizar y parsear expresiones Lisp en tokens.
+ */
 public class Parser {
     public List<Object> parse(String input) {
         List<Object> tokens = new ArrayList<>();
@@ -31,6 +34,7 @@ public class Parser {
         return tokens;
     }
 
+    //Parsea una lista de tokens anidada según las reglas de la sintaxis Lisp.
     private List<Object> parseList(StringTokenizer tokenizer) {
         List<Object> list = new ArrayList<>();
 

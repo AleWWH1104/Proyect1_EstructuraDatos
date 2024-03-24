@@ -1,9 +1,12 @@
 package com.example.Fase2;
-
 import java.util.List;
 
+/**
+ * Clase Quote que implementa la interfaz Iestructuras para la operación de cita ('quote').
+ */
 public class Quote<T> implements Iestructuras<T> {
     List<String> listQuote;
+    //Ejecuta la operación de cita ('quote') para devolver el token siguiente al 'quote'.
     @Override
     public Object execute(List<Object> tokens, Environment environment) {
         

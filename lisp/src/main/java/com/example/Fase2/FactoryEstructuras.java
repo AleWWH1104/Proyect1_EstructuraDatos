@@ -1,10 +1,13 @@
 package com.example.Fase2;
 
+/**
+ * Clase FactoryEstructuras que crea instancias de implementaciones de la interfaz Iestructuras
+ * basándose en la palabra reservada proporcionada.
+ *
+ * @param <T> Tipo genérico que extiende Number y representa el tipo de dato de las implementaciones de Iestructuras.
+ */
 public class FactoryEstructuras<T extends Number> {
 
-    // Crea y devuelve una instancia de {InterfaceFactory} basada en la palabra
-    // reservada proporcionada.
-    @SuppressWarnings("unchecked")
     public Iestructuras<T> crearImplementacion(Object tipo) {
         if (tipo instanceof String) {
             String tokenStr = (String) tipo;
@@ -34,11 +37,13 @@ public class FactoryEstructuras<T extends Number> {
                     return new SetQ<>();
                 case "list":
                     return new Listas<>();
+                case "atom":
+                    return new Atom<>();
                 default:
                     return new Valor<>();
             }
         } else {
-            throw new IllegalArgumentException("Invalid token type");
+            throw new IllegalArgumentException("Token invalido");
         }
     }
 }

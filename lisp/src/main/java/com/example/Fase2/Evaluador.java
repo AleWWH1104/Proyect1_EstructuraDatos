@@ -1,8 +1,9 @@
 package com.example.Fase2;
-
 import java.util.ArrayList;
 import java.util.List;
-
+/**
+ * Clase Evaluador que evalúa expresiones Lisp y ejecuta las operaciones correspondientes.
+ */
 public class Evaluador {
     private final Environment environment;
     private final FactoryEstructuras factory;
@@ -11,7 +12,7 @@ public class Evaluador {
         this.environment = environment;
         this.factory = new FactoryEstructuras();
     }
-
+    //Evalúa una expresión Lisp representada como una lista de tokens
     public Object evaluarExpresion(List<Object> tokens) {
         if (tokens.isEmpty()) {
             throw new IllegalArgumentException("Expresión vacía");
@@ -33,7 +34,7 @@ public class Evaluador {
             return evaluateToken(firstToken, list);
         }
     }
-
+    //Evalúa un token y ejecuta la operación correspondiente.
     public Object evaluateToken(Object token, List<Object> tokens) {
         Iestructuras estructura = factory.crearImplementacion(token);
         if (estructura instanceof Defun<?>) {
@@ -46,6 +47,7 @@ public class Evaluador {
         }
     }
 
+    //Reemplaza los valores de los tokens en la lista según las variables definidas en el entorno.
     private List<Object> replaceValues(List<Object> tokens) {
         List<Object> replacedTokens = new ArrayList<>();
         for (Object token : tokens) {
