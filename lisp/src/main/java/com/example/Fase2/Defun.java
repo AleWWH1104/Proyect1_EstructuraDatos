@@ -29,16 +29,8 @@ class Defun<T> implements Iestructuras<T> {
     public Defun() {
     }
 
-    @Override
     public Object execute(List<Object> tokens, Environment environment) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'execute'");
-    }
-
-}
-
-    public Object execute(List<Object> tokens, Environment environment) {
-        value = evaluar(environment, tokens);
+        //value = evaluar(environment, tokens);
         return value;
 
     }
