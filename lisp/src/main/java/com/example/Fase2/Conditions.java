@@ -1,6 +1,4 @@
 package com.example.Fase2;
-
-import java.util.Arrays;
 import java.util.List;
 
 public class Conditions<T> implements Iestructuras<T> {
