@@ -6,3 +6,8 @@
 )
 
 (print (factorial ))
+
+
+map funciones
+funciones.add(name, object)
+

@@ -1,4 +1,5 @@
 package com.example.Fase2;
+
 import java.util.List;
 
 public class Evaluador {
@@ -25,7 +26,6 @@ public class Evaluador {
 
     private Object evaluateList(List<Object> list) {
         Object firstToken = list.get(0);
-
         if (firstToken instanceof List) {
             return evaluarExpresion((List<Object>) firstToken);
         } else {
@@ -34,8 +34,8 @@ public class Evaluador {
     }
 
     public Object evaluateToken(Object token, List<Object> tokens) {
-        Iestructuras estructura = factory.crearImplementacion(token);        
+        Iestructuras estructura = factory.crearImplementacion(token);
         return estructura.execute(tokens, environment);
-    
+
     }
 }

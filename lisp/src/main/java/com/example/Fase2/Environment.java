@@ -8,6 +8,14 @@ public class Environment {
     private Map<String, Defun<?>> functionMap = new HashMap<>();
     private Map<String, Object> variableMap = new HashMap<>();
 
+    public Map<String, Defun<?>> getFunctionMap() {
+        return functionMap;
+    }
+
+    public Map<String, Object> getVariableMap() {
+        return variableMap;
+    }
+
     public void addFunction(String name, Defun<?> defun) {
         functionMap.put(name, defun);
     }

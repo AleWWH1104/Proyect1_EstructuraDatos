@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class SetQ<T> implements Iestructuras<T>{
+public class SetQ<T> implements Iestructuras<T> {
 
     private static Map<String, Double> variables = new HashMap<>();
 
@@ -48,14 +48,6 @@ public class SetQ<T> implements Iestructuras<T>{
         } catch (NumberFormatException e) {
             return false;
         }
-    }
-
-    public static void main(String[] args) {
-        String expression1 = "SETQ x 5";
-        String expression2 = "SETQ y (+ 3 4)";
-
-        System.out.println("Resultado de la expresión 1: " + evaluate(expression1));
-        System.out.println("Resultado de la expresión 2: " + evaluate(expression2));
     }
 
     @Override
