@@ -1,4 +1,4 @@
-package lisp.src.main.java.com.example.Fase2;
+package com.example.Fase2;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
