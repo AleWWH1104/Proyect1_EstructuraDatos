@@ -9,8 +9,11 @@ public class FactoryEstructuras<T extends Number> {
                 case "defun":
                     return new Defun<>();
                 case "quote":
+                case "'":
                     return new Quote<>();
-                case "cond":
+                case "loop":
+                case "if":
+                case "when":
                     return new Conditions<>();
                 case "=":
                     return new EQUALS<>();
@@ -19,8 +22,13 @@ public class FactoryEstructuras<T extends Number> {
                 case "*":
                 case "/":
                     return new Calculator<>();
+                case ">":
+                case "<":
+                case "<=":
+                case ">=":
+                    return new Comparador<>();
                 default:
-                    return null;   
+                    return new Atom<>();   
             }
         }else {
             throw new IllegalArgumentException("Invalid token type");

@@ -1,22 +1,18 @@
 package Fase2;
 
+import java.util.List;
+
 public class Quote<T> implements Iestructuras<T> {
 
     @Override
-    public void execute(String expresion) {
-        System.out.println("Procesando quote: " + expresion);
+    public Object execute(List<Object> tokens, Environment environment) {
+        // Obtenemos el token que sigue a 'quote' (o ').
+        if (tokens.size() < 2) {
+            throw new IllegalArgumentException("Falta el token a citar después de 'quote'");
+        }
+        // Devolver la sublista que sigue al quote
+        return tokens.subList(1, tokens.size());    
     }
 
     
-    // public T execute(String expresion) {
-    //      // Elimina los paréntesis y divide la expresión por espacios para obtener los elementos
-    //      String[] elementos = expresion.replaceAll("[()]", "").split("\\s+");
-        
-    //      if (elementos.length > 0) {
-    //          // Devuelve el primer elemento de la lista (en este caso, "a")
-    //          return (T) elementos[0];
-    //      } else {
-    //          throw new IllegalArgumentException("Expresión vacía para la operación quote.");
-    //      }
-    // }
 }

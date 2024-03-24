@@ -1,7 +1,7 @@
 package Fase2;
 
 import java.util.List;
-import java.util.ArrayList;
+import java.util.Stack;
 
 public class Calculator<T> implements Iestructuras<T> {
     @Override
@@ -10,75 +10,51 @@ public class Calculator<T> implements Iestructuras<T> {
             throw new IllegalArgumentException("Expresión vacía.");
         }
 
-        Object operador = tokens.get(0);
-        if (operador instanceof String) {
-            String operadorStr = (String) operador;
-            List<Object> subTokens = tokens.subList(1, tokens.size());
-            List<Double> operands = new ArrayList<>();
-            for (Object subToken : subTokens) {
-                if (subToken instanceof String) {
-                    if (esOperador((String) subToken)) {
-                        continue;
-                    }
-                    operands.add(Double.parseDouble((String) subToken));
+        Stack<Double> stack = new Stack<>();
+        for (int i = tokens.size() - 1; i >= 0; i--) {
+            Object token = tokens.get(i);
+            if (token instanceof String) {
+                String operator = (String) token;
+                if (isOperator(operator)) {
+                    double operand1 = stack.pop();
+                    double operand2 = stack.pop();
+                    double result = applyOperator(operator, operand1, operand2);
+                    stack.push(result);
+                } else {
+                    stack.push(Double.parseDouble(operator));
                 }
+            } else if (token instanceof List<?>) {
+                double result = execute((List<Object>) token, environment);
+                stack.push(result);
             }
-
-            switch (operadorStr) {
-                case "+":
-                    return sumar(operands);
-                case "-":
-                    return restar(operands);
-                case "*":
-                    return multiplicar(operands);
-                case "/":
-                    return dividir(operands);
-                default:
-                    throw new IllegalArgumentException("Operador no válido: " + operadorStr);
-            }
-        } else {
-            throw new IllegalArgumentException("Operador no válido: " + operador);
         }
+
+        if (stack.size() != 1) {
+            throw new IllegalArgumentException("Expresión inválida.");
+        }
+
+        return stack.pop();
     }
 
-    private double sumar(List<Double> operands) {
-        double resultado = 0;
-        for (Double operand : operands) {
-            resultado += operand;
-        }
-        return resultado;
-    }
-
-    private double restar(List<Double> operands) {
-        if (operands.size() != 2) {
-            throw new IllegalArgumentException("La resta requiere exactamente dos operandos.");
-        }
-        double operando1 = operands.get(0);
-        double operando2 = operands.get(1);
-        return operando1 - operando2;
-    }
-
-    private double multiplicar(List<Double> operands) {
-        double resultado = 1;
-        for (Double operand : operands) {
-            resultado *= operand;
-        }
-        return resultado;
-    }
-
-    private double dividir(List<Double> operands) {
-        if (operands.size() != 2) {
-            throw new IllegalArgumentException("La división requiere exactamente dos operandos.");
-        }
-        double operando1 = operands.get(0);
-        double operando2 = operands.get(1);
-        if (operando2 == 0) {
-            throw new ArithmeticException("No se puede dividir por cero.");
-        }
-        return operando1 / operando2;
-    }
-
-    private boolean esOperador(String token) {
+    private boolean isOperator(String token) {
         return token.equals("+") || token.equals("-") || token.equals("*") || token.equals("/");
+    }
+
+    private double applyOperator(String operator, double operand1, double operand2) {
+        switch (operator) {
+            case "+":
+                return operand1 + operand2;
+            case "-":
+                return operand1 - operand2;
+            case "*":
+                return operand1 * operand2;
+            case "/":
+                if (operand2 == 0) {
+                    throw new ArithmeticException("División por cero.");
+                }
+                return operand1 / operand2;
+            default:
+                throw new IllegalArgumentException("Operador desconocido: " + operator);
+        }
     }
 }
