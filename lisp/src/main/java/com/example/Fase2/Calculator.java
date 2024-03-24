@@ -1,8 +1,8 @@
 package com.example.Fase2;
-
 import java.util.List;
 import java.util.Stack;
 
+//Ejecuta la expresión matemática en notación prefija representada por una lista de tokens.
 public class Calculator<T> implements Iestructuras<T> {
     @Override
     public Double execute(List<Object> tokens, Environment environment) {
@@ -35,10 +35,12 @@ public class Calculator<T> implements Iestructuras<T> {
         return stack.pop();
     }
 
+    //Verifica si un token es un operador matemático válido (+, -, *, /).
     private boolean isOperator(String token) {
         return token.equals("+") || token.equals("-") || token.equals("*") || token.equals("/");
     }
 
+    //Aplica un operador matemático a dos operandos.
     private double applyOperator(String operator, double operand1, double operand2) {
         switch (operator) {
             case "+":

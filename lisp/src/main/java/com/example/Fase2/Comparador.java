@@ -28,13 +28,17 @@ public class Comparador<T> implements Iestructuras<T> {
 
         // Realizar la comparación según el operador
         if ("<".equals(operador)) {
-            return Double.parseDouble(operando1.toString()) < Double.parseDouble(operando2.toString());
+            return Double.parseDouble(operando1.toString()) < Double.parseDouble(operando2.toString()) ? "T" : "NIL";
         } else if (">".equals(operador)) {
-            return Double.parseDouble(operando1.toString()) > Double.parseDouble(operando2.toString());
-        } else if (">=".equals(operador)) {
-            return Double.parseDouble(operando1.toString()) >= Double.parseDouble(operando2.toString());
+            return Double.parseDouble(operando1.toString()) > Double.parseDouble(operando2.toString()) ? "T" : "NIL";
         } else if ("<=".equals(operador)) {
-            return Double.parseDouble(operando1.toString()) <= Double.parseDouble(operando2.toString());
+            return Double.parseDouble(operando1.toString()) <= Double.parseDouble(operando2.toString()) ? "T" : "NIL";
+        } else if (">=".equals(operador)) {
+            return Double.parseDouble(operando1.toString()) >= Double.parseDouble(operando2.toString()) ? "T" : "NIL";
+        } else if ("=".equals(operador)) {
+            return Double.parseDouble(operando1.toString()) == Double.parseDouble(operando2.toString()) ? "T" : "NIL";
+        } else if ("/=".equals(operador)) {
+            return Double.parseDouble(operando1.toString()) != Double.parseDouble(operando2.toString()) ? "T" : "NIL";
         } else {
             throw new IllegalArgumentException("Operador de comparación no válido: " + operador);
         }
