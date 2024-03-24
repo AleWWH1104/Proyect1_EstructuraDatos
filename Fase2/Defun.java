@@ -29,6 +29,7 @@ class Defun<T> implements Iestructuras<T> {
 
     @Override
     public Object execute(List<Object> expression) {
+        Evaluador evaluador = new Evaluator(environment);
         value = evaluar(environment, expression);
         return value;
 
