@@ -11,12 +11,12 @@ public class LispInterpreter {
     public static void main(String[] args) {
         // Crear un objeto FileManager para leer la expresión desde un archivo
         FileManager fileManager = new FileManager();
-        String filePath = "/Users/alejandraayala/Desktop/EstructuraDatos/LISP/Proyect1_EstructuraDatos/lisp/src/main/java/com/example/Fase2/prueba.txt";
+        String filePath = "src\\main\\java\\com\\example\\Fase2\\prueba.txt";
         String expresion = fileManager.leerExpresion(filePath);
         // Crear un objeto Parser para parsear la expresión en tokens
         Parser parsear = new Parser();
         List<Object> tokens = parsear.parse(expresion);
-        System.out.println(tokens);
+
         // Lista para almacenar los resultados de evaluar las expresiones
         List<String> results = new ArrayList<>();
         Evaluador evaluador = new Evaluador(new Environment());

@@ -1,1 +1,9 @@
-(cond ((= 0 0) 5))
+(
+    defun factorial (num)
+        (cond 
+        ((= num 0) 1)
+        ((> num 0) (* num (factorial (- num 1))))
+        )
+)
+
+(factorial 5)
