@@ -1,37 +1,39 @@
 package Fase2;
 
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
-public class SetQ<T> implements Iestructuras<T>{
+public class SetQ<T> implements Iestructuras<T> {
+    private String variableName;
+    private T value;
 
-    public SetQ(String variableName, Object value) {
+    public SetQ(String variableName, T value) {
         this.variableName = variableName;
         this.value = value;
-        this.instructions = new ArrayList<>();
     }
 
     public String getVariableName() {
         return variableName;
     }
 
-    public Object getValue() {
+    public T getValue() {
         return value;
     }
 
-    public void addInstruction(String instruction) {
-        instructions.add(instruction);
-    }
-
-    public String execute(String input) {
-   
-        return "Instrucciones ejecutadas para la variable '" + variableName + "'";
-    }
-
     @Override
-    public Object execute(List<Object> tokens, Environment environment) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'execute'");
+    public T execute(List<Object> tokens, Environment environment) {
+        // Verifica si se proporciona el nombre de la variable y un valor asociado
+        if (tokens.size() != 2) {
+            throw new IllegalArgumentException("El comando SETQ requiere un nombre de variable y un valor asociado.");
+        }
+        
+        // Obtiene el nombre de la variable y el valor asociado de la lista de tokens
+        String variableName = (String) tokens.get(0);
+        T value = (T) tokens.get(1);
+        
+        // Almacena el valor asociado con el nombre de la variable en el entorno
+        environment.setVariable(variableName, value);
+        
+        // Devuelve el valor asociado como confirmación de la ejecución del comando SETQ
+        return value;
     }
 }

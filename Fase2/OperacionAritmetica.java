@@ -1,3 +1,5 @@
+package Fase2;
+
 import java.util.List;
 
 public class OperacionAritmetica {
@@ -16,29 +18,30 @@ public class OperacionAritmetica {
     }
 
     public Object evaluar() {
-        Object valor1 = obtenerValor(operando1);
-        Object valor2 = obtenerValor(operando2);
+        Object valorOperando1 = evaluarOperando(operando1);
+        Object valorOperando2 = evaluarOperando(operando2);
 
+        // Realizar la evaluación de acuerdo al operador
         switch (operador) {
             case "+":
-                return (int) valor1 + (int) valor2;
+                return (int)valorOperando1 + (int)valorOperando2;
             case "-":
-                return (int) valor1 - (int) valor2;
+                return (int)valorOperando1 - (int)valorOperando2;
             case "*":
-                return (int) valor1 * (int) valor2;
+                return (int)valorOperando1 * (int)valorOperando2;
             case "/":
-                if ((int) valor2 == 0) {
+                if ((int)valorOperando2 == 0) {
                     throw new ArithmeticException("División por cero");
                 }
-                return (int) valor1 / (int) valor2;
+                return (int)valorOperando1 / (int)valorOperando2;
             default:
                 throw new IllegalArgumentException("Operador aritmético no válido: " + operador);
         }
     }
 
-    private Object obtenerValor(Object operando) {
+    private Object evaluarOperando(Object operando) {
         if (operando instanceof Integer) {
-            return operando;
+            return operando; // El operando es un número
         } else if (operando instanceof List) {
             return new LispInterpreter().evaluarExpresionAritmetica((List<Object>) operando);
         } else {

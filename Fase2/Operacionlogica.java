@@ -1,5 +1,4 @@
 package Fase2;
-NO TERMINADO AUNN
 import java.util.ArrayList;
 import java.util.List;
 
@@ -32,7 +31,7 @@ public class Operacionlogica {
     }
 
     public boolean execute() {
-        switch (operador) {
+        switch (operador.toUpperCase()) {
             case "AND":
                 return valores.stream().allMatch(b -> obtenerBooleano(b));
             case "OR":
