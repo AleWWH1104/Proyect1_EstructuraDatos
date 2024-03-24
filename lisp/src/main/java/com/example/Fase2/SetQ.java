@@ -32,7 +32,7 @@ public class SetQ<T> implements Iestructuras<T> {
         // set la variable en el environment
         setVariable((String) variableNameToken, valueToken, environment);
 
-        return valueToken;
+        return "";
     }
 
     private void setVariable(String variableName, Object value, Environment environment) {

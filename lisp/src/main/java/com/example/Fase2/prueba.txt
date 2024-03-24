@@ -1,13 +1,9 @@
-<<<<<<< HEAD
-(defun fibonacci (n)
-  (cond
-    ((equal n 0) 0)
-    ((equal n 1) 1)
-    ((> n 1) (+ (fibonacci (- n 1)) (fibonacci (- n 2))))))
-(fibonacci 2)
-=======
-(9)
-(hola)
-((list 1 2 3))
+(
+    defun factorial (num)
+        (cond 
+        ((= num 0) 1)
+        ((> num 0) (* num (factorial (- num 1))))
+        )
+)
 
->>>>>>> 6eff69ecd2591f6cbb1a07126c9a1b70905945e6
+(factorial 5)

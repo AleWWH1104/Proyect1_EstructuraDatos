@@ -63,6 +63,8 @@ public class Defun<T> implements Iestructuras<T>, Cloneable {
     @Override
     public Object execute(List<Object> tokens, Environment environment) {
         tokens.remove(0);
+        Map<String, Object> variables = localEnvironment.getVariableMap();
+        variables.putAll(environment.getVariableMap());
         setParams(tokens, environment);
         List<Object> results = new ArrayList<>();
         Evaluador evaluator = new Evaluador(localEnvironment);
