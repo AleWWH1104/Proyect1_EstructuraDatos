@@ -11,9 +11,7 @@ public class FactoryEstructuras<T extends Number> {
                 case "quote":
                 case "'":
                     return new Quote<>();
-                case "loop":
-                case "if":
-                case "when":
+                case "cond":
                     return new Conditions<>();
                 case "=":
                     return new EQUALS<>();
@@ -27,6 +25,8 @@ public class FactoryEstructuras<T extends Number> {
                 case "<=":
                 case ">=":
                     return new Comparador<>();
+                case "setq":
+                    return new SetQ<>();
                 default:
                     return new Atom<>();   
             }
