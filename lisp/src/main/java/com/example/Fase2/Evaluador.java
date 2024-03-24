@@ -1,5 +1,6 @@
 package com.example.Fase2;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Evaluador {
@@ -40,7 +41,27 @@ public class Evaluador {
             return "";
         } else {
             // Si no es una clase Defun<T>, sigue con el comportamiento existente
-            return estructura.execute(tokens, environment);
+            List<Object> replacedTokens = replaceValues(tokens);
+            return estructura.execute(replacedTokens, environment);
         }
     }
+
+    private List<Object> replaceValues(List<Object> tokens) {
+        List<Object> replacedTokens = new ArrayList<>();
+        for (Object token : tokens) {
+            if (token instanceof String) {
+                String word = (String) token;
+                if (environment.getVariableMap().containsKey(word)) {
+                    Object value = environment.getVariable(word);
+                    replacedTokens.add(value);
+                } else {
+                    replacedTokens.add(token);
+                }
+            } else {
+                replacedTokens.add(token);
+            }
+        }
+        return replacedTokens;
+    }
+
 }

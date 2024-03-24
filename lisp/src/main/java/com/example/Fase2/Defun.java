@@ -17,18 +17,18 @@ public class Defun<T> implements Iestructuras<T>, Cloneable {
     }
 
     public void setAttributes(List<Object> instructions) {
+        System.out.println(instructions);
         localEnvironment = new Environment();
-        instructions.remove(0);
-        this.name = instructions.get(0).toString();
-        List<Object> p = (List<Object>) instructions.get(1);
-        if (p.size() > 0) {
-            List<String> params = (List<String>) instructions.get(1);
-            instructions.remove(1);
-            instructions.remove(2);
+        this.name = instructions.get(1).toString();
+        List<String> params = (List<String>) instructions.get(2);
+        if (params.size() > 0) {
             for (String param : params) {
                 this.params.put(param, null);
             }
         }
+        instructions.remove(0);
+        instructions.remove(0);
+        instructions.remove(0);
         this.instructions = instructions;
     }
 

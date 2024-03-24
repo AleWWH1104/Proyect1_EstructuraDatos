@@ -30,6 +30,8 @@ public class FactoryEstructuras<T extends Number> {
                     return new Comparador<>();
                 case "atom":
                     return new Atom<>();
+                case "setq":
+                    return new SetQ<>();
                 default:
                     return new Valor<>();
             }
