@@ -1,6 +1,4 @@
 package com.example.Fase2;
-
-import java.util.ArrayList;
 import java.util.List;
 
 public class Atom<T> implements Iestructuras<T> {
