@@ -35,7 +35,12 @@ public class Evaluador {
 
     public Object evaluateToken(Object token, List<Object> tokens) {
         Iestructuras estructura = factory.crearImplementacion(token);
-        return estructura.execute(tokens, environment);
-
+        if (estructura instanceof Defun<?>) {
+            ((Defun<?>) estructura).setAttributes(tokens);
+            return "";
+        } else {
+            // Si no es una clase Defun<T>, sigue con el comportamiento existente
+            return estructura.execute(tokens, environment);
+        }
     }
 }

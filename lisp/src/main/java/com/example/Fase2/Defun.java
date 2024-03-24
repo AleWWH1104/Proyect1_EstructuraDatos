@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
-class Defun<T> implements Iestructuras<T>, Cloneable {
+public class Defun<T> implements Iestructuras<T>, Cloneable {
     public Environment localEnvironment;
     public String name;
     public List<Object> instructions;
@@ -16,7 +16,7 @@ class Defun<T> implements Iestructuras<T>, Cloneable {
     public Defun() {
     }
 
-    public void setAtributes(List<Object> instructions) throws CloneNotSupportedException {
+    public void setAttributes(List<Object> instructions) {
         localEnvironment = new Environment();
         instructions.remove(0);
         this.name = instructions.get(0).toString();
@@ -33,10 +33,10 @@ class Defun<T> implements Iestructuras<T>, Cloneable {
     }
 
     public void setParams(List<Object> valueParams) {
-        Set<String> claves = params.keySet();
-        List<String> listaClaves = new ArrayList<>(claves);
+        Set<String> keys = params.keySet();
+        List<String> keyList = new ArrayList<>(keys);
         for (int index = 0; index < valueParams.size(); index++) {
-            String key = listaClaves.get(index);
+            String key = keyList.get(index);
             List<Object> result = isList(valueParams.get(index));
             Object value = execute(result, localEnvironment);
             params.put(key, value);
@@ -49,28 +49,29 @@ class Defun<T> implements Iestructuras<T>, Cloneable {
         if (object instanceof List) {
             return (List<Object>) object;
         } else {
-            List<Object> lista = new ArrayList<>();
-            lista.add(object);
-            return lista;
+            List<Object> list = new ArrayList<>();
+            list.add(object);
+            return list;
         }
     }
 
     @Override
     public Object execute(List<Object> tokens, Environment environment) {
-        Evaluador evaluador = new Evaluador(environment);
-        result = evaluador.evaluarExpresion(tokens);
+        Evaluador evaluator = new Evaluador(environment);
+        result = evaluator.evaluarExpresion(tokens);
         return result;
     }
 
     @Override
-    protected Object clone() throws CloneNotSupportedException {
-        Defun<T> clone = (Defun<T>) super.clone();
-        clone.instructions = new ArrayList<>(this.instructions);
-        clone.params = new HashMap<>(this.params);
-        clone.localEnvironment = new Environment();
-        for (Map.Entry<String, Object> entry : this.localEnvironment.getVariableMap().entrySet()) {
-            clone.localEnvironment.setVariable(entry.getKey(), entry.getValue());
+    public Defun<T> clone() {
+        try {
+            Defun<T> clonedDefun = (Defun<T>) super.clone();
+            clonedDefun.localEnvironment = this.localEnvironment.clone(); // Clonar el entorno
+            clonedDefun.instructions = new ArrayList<>(this.instructions);
+            clonedDefun.params = new HashMap<>(this.params);
+            return clonedDefun;
+        } catch (CloneNotSupportedException e) {
+            return null;
         }
-        return clone;
     }
 }
