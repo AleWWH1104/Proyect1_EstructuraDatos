@@ -16,8 +16,7 @@ public class FactoryEstructuras<T extends Number> {
                     return new Quote<>();
                 case "cond":
                     return new Conditions<>();
-                //case "equal":
-                case "=":
+                case "equal":
                     return new EQUALS<>();
                 case "+":
                 case "-":
@@ -28,6 +27,8 @@ public class FactoryEstructuras<T extends Number> {
                 case "<":
                 case "<=":
                 case ">=":
+                case "=":
+                case "/=":
                     return new Comparador<>();
                 case "setq":
                     return new SetQ<>();

@@ -23,18 +23,14 @@ public class EQUALS<T> implements Iestructuras<T> {
         }
 
         // Convertir a String si son Double
-        if (leftOperand instanceof Integer) {
+        if (leftOperand instanceof Double) {
             leftOperand = Double.toString((Double) leftOperand);
         }
-        if (rightOperand instanceof Integer) {
+        if (rightOperand instanceof Double) {
             rightOperand = Double.toString((Double) rightOperand);
         }
-        System.out.println(leftOperand.getClass().getSimpleName());
-        System.out.println(rightOperand.getClass().getSimpleName());
-        System.out.println(leftOperand);
-        System.out.println(rightOperand);
-        
-        // Verificar si los operandos son iguales
-        return leftOperand.equals(rightOperand);
+
+       // Verificar si los operandos son iguales y devolver T o NIL
+       return leftOperand.equals(rightOperand) ? "T" : "NIL";
     }
 }
