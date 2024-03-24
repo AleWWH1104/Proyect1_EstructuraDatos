@@ -1,3 +1,4 @@
-(equal 10 (+ 5 5))
-(defun hola (a))
-(hola 1)
+(9)
+(hola)
+((list 1 2 3))
+

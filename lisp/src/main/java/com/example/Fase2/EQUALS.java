@@ -2,6 +2,7 @@ package com.example.Fase2;
 
 import java.util.List;
 
+/* Compara la igualdad de dos operandos y devuelve "T" si son iguales, o "NIL" si son diferentes.*/
 public class EQUALS<T> implements Iestructuras<T> {
 
     @SuppressWarnings("unchecked")
@@ -23,10 +24,16 @@ public class EQUALS<T> implements Iestructuras<T> {
             rightOperand = evaluador.evaluarExpresion((List<Object>) rightOperand);
         }
 
-        // Comparar los resultados
-        System.out.println(rightOperand.getClass().getSimpleName());
-        System.out.println(leftOperand.getClass().getSimpleName());
-        return leftOperand.equals(rightOperand);
+        // Convertir a String si son Double
+        if (leftOperand instanceof Double) {
+            leftOperand = Double.toString((Double) leftOperand);
+        }
+        if (rightOperand instanceof Double) {
+            rightOperand = Double.toString((Double) rightOperand);
+        }
+
+       // Verificar si los operandos son iguales y devolver T o NIL
+       return leftOperand.equals(rightOperand) ? "T" : "NIL";
     }
 
 }

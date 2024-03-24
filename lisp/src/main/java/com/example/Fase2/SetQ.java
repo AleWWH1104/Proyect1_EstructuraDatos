@@ -1,9 +1,14 @@
 package com.example.Fase2;
-
 import java.util.List;
 
+/**
+ * Clase SetQ que implementa la interfaz Iestructuras para asignar valores a variables en un entorno.
+ *
+ * @param <T> Tipo genérico (no utilizado en esta implementación).
+ */
 public class SetQ<T> implements Iestructuras<T> {
 
+    //Ejecuta la operación SetQ para asignar un valor a una variable en el entorno.
     @Override
     public Object execute(List<Object> tokens, Environment environment) {
         if (tokens.size() != 3) {
@@ -17,19 +22,20 @@ public class SetQ<T> implements Iestructuras<T> {
             throw new IllegalArgumentException("Variable name should be a string.");
         }
 
-        // Evaluate the value token recursively if it's a list
+        // Evaluar recursivamente el token de valor si es una lista
         Evaluador evaluador = new Evaluador(environment);
         if (valueToken instanceof List) {
             valueToken = evaluador.evaluarExpresion((List<Object>) valueToken);
         }
-        // set la variable en el environment
+        //set la variable en el environment
         setVariable((String) variableNameToken, valueToken, environment);
 
-        return "";
+        return valueToken; 
+     }
+ 
+    private void setVariable(String variableName, Object value, Environment environment) {
+         environment.setVariable(variableName, value);
     }
 
-    private void setVariable(String variableName, Object value, Environment environment) {
-        environment.setVariable(variableName, value);
-    }
 
 }
