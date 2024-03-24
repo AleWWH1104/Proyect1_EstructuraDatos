@@ -1,7 +1,10 @@
 package com.example.Fase2;
+
 public class FactoryEstructuras<T extends Number> {
 
-    // Crea y devuelve una instancia de {InterfaceFactory} basada en la palabra reservada proporcionada.
+    // Crea y devuelve una instancia de {InterfaceFactory} basada en la palabra
+    // reservada proporcionada.
+    @SuppressWarnings("unchecked")
     public Iestructuras<T> crearImplementacion(Object tipo) {
         if (tipo instanceof String) {
             String tokenStr = (String) tipo;
@@ -13,7 +16,7 @@ public class FactoryEstructuras<T extends Number> {
                     return new Quote<>();
                 case "cond":
                     return new Conditions<>();
-                case "=":
+                case "equal":
                     return new EQUALS<>();
                 case "+":
                 case "-":
@@ -25,14 +28,18 @@ public class FactoryEstructuras<T extends Number> {
                 case "<=":
                 case ">=":
                     return new Comparador<>();
+<<<<<<< HEAD
                 case "setq":
                     return new SetQ<>();
+=======
+                case "atom":
+                    return new Atom<>();
+>>>>>>> main
                 default:
-                    return new Atom<>();   
+                    return new Valor<>();
             }
-        }else {
+        } else {
             throw new IllegalArgumentException("Invalid token type");
         }
     }
 }
-    

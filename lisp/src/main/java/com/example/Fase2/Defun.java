@@ -4,38 +4,74 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
-public class Defun<T> implements Iestructuras<T> {
-    Environment environment = new Environment();
-    String name;
-    List<Object> instructions;
-    Map<String, Object> params;
-    Object value;
+public class Defun<T> implements Iestructuras<T>, Cloneable {
+    public Environment localEnvironment;
+    public String name;
+    public List<Object> instructions;
+    public Map<String, Object> params = new HashMap<>();
+    public Object result;
 
-    public void setInstructions(List<Object> instructions) {
+    public Defun() {
+    }
+
+    public void setAttributes(List<Object> instructions) {
+        localEnvironment = new Environment();
+        instructions.remove(0);
+        this.name = instructions.get(0).toString();
+        List<Object> p = (List<Object>) instructions.get(1);
+        if (p.size() > 0) {
+            List<String> params = (List<String>) instructions.get(1);
+            instructions.remove(1);
+            instructions.remove(2);
+            for (String param : params) {
+                this.params.put(param, null);
+            }
+        }
         this.instructions = instructions;
     }
 
-    // public Defun(String name, List<String> params) {
-    //     this.name = name;
-    //     this.params = new HashMap<>();
-    //     for (String param : params) {
-    //         this.params.put(param, null);
-    //     }
-    // }
+    public void setParams(List<Object> valueParams) {
+        Set<String> keys = params.keySet();
+        List<String> keyList = new ArrayList<>(keys);
+        for (int index = 0; index < valueParams.size(); index++) {
+            String key = keyList.get(index);
+            List<Object> result = isList(valueParams.get(index));
+            Object value = execute(result, localEnvironment);
+            params.put(key, value);
+        }
+        Map<String, Object> variables = localEnvironment.getVariableMap();
+        variables.putAll(params);
+    }
 
-    // @Override
-    // public Object execute(List<Object> expression) {
-    //     Evaluator evaluador = new Evaluator(environment);
-    //     value = evaluador.evaluar(environment, expression);
-    //     return value;
-
-    // }
+    private List<Object> isList(Object object) {
+        if (object instanceof List) {
+            return (List<Object>) object;
+        } else {
+            List<Object> list = new ArrayList<>();
+            list.add(object);
+            return list;
+        }
+    }
 
     @Override
     public Object execute(List<Object> tokens, Environment environment) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'execute'");
+        Evaluador evaluator = new Evaluador(environment);
+        result = evaluator.evaluarExpresion(tokens);
+        return result;
     }
 
+    @Override
+    public Defun<T> clone() {
+        try {
+            Defun<T> clonedDefun = (Defun<T>) super.clone();
+            clonedDefun.localEnvironment = this.localEnvironment.clone(); // Clonar el entorno
+            clonedDefun.instructions = new ArrayList<>(this.instructions);
+            clonedDefun.params = new HashMap<>(this.params);
+            return clonedDefun;
+        } catch (CloneNotSupportedException e) {
+            return null;
+        }
+    }
 }
