@@ -1,5 +1,6 @@
 package com.example.Fase2;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class LispInterpreter {
@@ -10,10 +11,16 @@ public class LispInterpreter {
         Parser parsear = new Parser();
         List<Object> tokens = parsear.parse(expresion);
         System.out.println(tokens);
+        List<String> results = new ArrayList<>();
+        Evaluador evaluador = new Evaluador(new Environment());
         for (Object lista : tokens) {
-            Evaluador evaluador = new Evaluador(new Environment());
             Object result = evaluador.evaluarExpresion((List<Object>) lista);
-            System.out.println("Resultado: " + result);
+            if (result.toString() != "") {
+                results.add(result.toString());
+            }
+        }
+        for (String r : results) {
+            System.out.println(r);
         }
     }
 }

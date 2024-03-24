@@ -4,7 +4,6 @@ import java.util.List;
 
 public class SetQ<T> implements Iestructuras<T> {
 
-    
     @Override
     public Object execute(List<Object> tokens, Environment environment) {
         if (tokens.size() != 3) {

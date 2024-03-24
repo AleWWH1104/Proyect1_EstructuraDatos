@@ -22,7 +22,19 @@ public class EQUALS<T> implements Iestructuras<T> {
             rightOperand = evaluador.evaluarExpresion((List<Object>) rightOperand);
         }
 
-        // Comparar los resultados
+        // Convertir a String si son Double
+        if (leftOperand instanceof Integer) {
+            leftOperand = Double.toString((Double) leftOperand);
+        }
+        if (rightOperand instanceof Integer) {
+            rightOperand = Double.toString((Double) rightOperand);
+        }
+        System.out.println(leftOperand.getClass().getSimpleName());
+        System.out.println(rightOperand.getClass().getSimpleName());
+        System.out.println(leftOperand);
+        System.out.println(rightOperand);
+        
+        // Verificar si los operandos son iguales
         return leftOperand.equals(rightOperand);
     }
 }

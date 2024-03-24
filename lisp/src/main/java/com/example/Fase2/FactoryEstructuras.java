@@ -16,7 +16,8 @@ public class FactoryEstructuras<T extends Number> {
                     return new Quote<>();
                 case "cond":
                     return new Conditions<>();
-                case "equal":
+                //case "equal":
+                case "=":
                     return new EQUALS<>();
                 case "+":
                 case "-":
@@ -30,8 +31,11 @@ public class FactoryEstructuras<T extends Number> {
                     return new Comparador<>();
                 case "setq":
                     return new SetQ<>();
+                // case "list":
+                //     return new Listas<>();
                 default:
                     return new Valor<>();
+                    //return new Valor<>();
             }
         } else {
             throw new IllegalArgumentException("Invalid token type");

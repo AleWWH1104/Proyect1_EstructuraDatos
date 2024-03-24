@@ -11,7 +11,11 @@ public class Parser {
         while (tokenizer.hasMoreTokens()) {
             String token = tokenizer.nextToken().trim();
             if (!token.isEmpty()) {
-                if (token.equals("(")) {
+                if (token.startsWith("'")) {
+                    // Separar el token en la comilla simple
+                    tokens.add(",");
+                    tokens.add(token.substring(1));
+                } else if (token.equals("(")) {
                     tokens.add(parseList(tokenizer));
                 } else {
                     tokens.add(token);
