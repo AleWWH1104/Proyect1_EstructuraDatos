@@ -16,6 +16,10 @@ public class Defun<T> implements Iestructuras<T>, Cloneable {
     public Defun() {
     }
 
+    public void setFuncios(String name, Defun<?> funcion) {
+        localEnvironment.addFunction(name, funcion);
+    }
+
     public void setAttributes(List<Object> instructions) {
         System.out.println(instructions);
         localEnvironment = new Environment();
@@ -35,6 +39,7 @@ public class Defun<T> implements Iestructuras<T>, Cloneable {
     public void setParams(List<Object> valueParams) {
         Set<String> keys = params.keySet();
         List<String> keyList = new ArrayList<>(keys);
+        System.out.println(valueParams);
         for (int index = 0; index < valueParams.size(); index++) {
             String key = keyList.get(index);
             List<Object> result = isList(valueParams.get(index));

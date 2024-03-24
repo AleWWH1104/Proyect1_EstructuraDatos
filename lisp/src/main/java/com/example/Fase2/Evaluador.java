@@ -35,9 +35,13 @@ public class Evaluador {
     }
 
     public Object evaluateToken(Object token, List<Object> tokens) {
-        Iestructuras estructura = factory.crearImplementacion(token);
-        if (estructura instanceof Defun<?>) {
-            ((Defun<?>) estructura).setAttributes(tokens);
+        Iestructuras estructura = factory.crearImplementacion(token, environment);
+        Boolean flagFuncionCreate = environment.getFunctionMap().containsKey(token.toString());
+        if (estructura instanceof Defun<?> && !flagFuncionCreate) {
+            Defun<?> funcion = (Defun<?>) estructura;
+            funcion.setAttributes(tokens);
+            environment.addFunction(funcion.name, funcion);
+            System.out.println("a");
             return "";
         } else {
             // Si no es una clase Defun<T>, sigue con el comportamiento existente

@@ -1,4 +1,5 @@
 package com.example.Fase2;
+
 import java.util.List;
 
 public class EQUALS<T> implements Iestructuras<T> {
@@ -23,6 +24,9 @@ public class EQUALS<T> implements Iestructuras<T> {
         }
 
         // Comparar los resultados
+        System.out.println(rightOperand.getClass().getSimpleName());
+        System.out.println(leftOperand.getClass().getSimpleName());
         return leftOperand.equals(rightOperand);
     }
+
 }

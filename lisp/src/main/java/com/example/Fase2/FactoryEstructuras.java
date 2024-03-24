@@ -4,10 +4,13 @@ public class FactoryEstructuras<T extends Number> {
 
     // Crea y devuelve una instancia de {InterfaceFactory} basada en la palabra
     // reservada proporcionada.
-    @SuppressWarnings("unchecked")
-    public Iestructuras<T> crearImplementacion(Object tipo) {
+    public Iestructuras<T> crearImplementacion(Object tipo, Environment environment) {
         if (tipo instanceof String) {
             String tokenStr = (String) tipo;
+            if (environment.getFunctionMap().containsKey(tokenStr)) {
+                System.out.println("lol");
+                return obtenerCopiaDesdeEnvironment(tokenStr, environment);
+            }
             switch (tokenStr) {
                 case "defun":
                     return new Defun<>();
@@ -38,5 +41,22 @@ public class FactoryEstructuras<T extends Number> {
         } else {
             throw new IllegalArgumentException("Invalid token type");
         }
+    }
+
+    // Método para obtener una copia del objeto desde el Environment si el token es
+    // una función definida
+    @SuppressWarnings("unchecked")
+    private Iestructuras<T> obtenerCopiaDesdeEnvironment(String token, Environment environment) {
+        Defun<?> function = environment.getFunctionMap().get(token);
+        if (function != null) {
+            Defun<?> fooCopy = function.clone();
+            function.setFuncios(function.name, fooCopy);
+            System.out.println(fooCopy);
+            // return (Iestructuras<T>) function;
+        } else {
+            System.out.println("xd");
+            // Si no se encuentra la función en el Environment, devolvemos null
+        }
+        return null;
     }
 }

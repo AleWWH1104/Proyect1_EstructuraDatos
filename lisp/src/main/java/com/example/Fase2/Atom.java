@@ -1,20 +1,27 @@
 package com.example.Fase2;
+
+import java.util.ArrayList;
 import java.util.List;
 
 public class Atom<T> implements Iestructuras<T> {
 
     @Override
     public Object execute(List<Object> tokens, Environment environment) {
-        // Verificar que la lista de tokens tenga al menos un elemento
         if (tokens.isEmpty()) {
-            throw new IllegalArgumentException("No hay Atom/ estructura vacia");
+            throw new IllegalArgumentException("No hay atomo");
         }
-        
-        // Obtener el primer elemento de la lista de tokens
-        Object atom = tokens.get(0);
-        
-        // Devolver el átomo sin evaluar
-        return atom;    
+        System.out.println(tokens);
+        Evaluador evaluador = new Evaluador(environment);
+        Object token = null;
+
+        if (tokens.get(1) instanceof List) {
+            token = evaluador.evaluarExpresion((List<Object>) tokens.get(1));
+        }
+
+        if (token instanceof List) {
+            return false;
+        } else {
+            return true;
+        }
     }
-    
 }
