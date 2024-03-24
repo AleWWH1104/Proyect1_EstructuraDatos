@@ -1,61 +1,50 @@
 package Fase2;
-import java.util.ArrayList;
 import java.util.List;
 
 public class Predicate<T> {
+    public List<Object> expresion;
 
-    @SuppressWarnings("hiding")
-    public class Listas<T> implements Iestructuras<T>{
-        @Override
-        public void execute(String expresion) {
-            List<T> list = listConversion(expresion);
-            System.out.println(list);    
-        }
-
-        public List<T> listConversion(String expresion) {
-            String[] tokens = expresion.substring(0, expresion.length() - 1).split("\\s+");
-            List<T> result = new ArrayList<>();
-    
-            for (int i = 1; i < tokens.length; i++) {
-                try {
-                    @SuppressWarnings("unchecked")
-                    T value = (T) tokens[i];
-                    result.add(value);
-                } catch (Exception e) {
-                    System.out.println(e.getMessage());
-                }
-            }
-            return result;
-        }
-    }
-
-    @SuppressWarnings("hiding")
-    public class Atom<T> implements Iestructuras<T>{
-        @Override
-        public void execute(String expresion) {
-        
-        }
-    }
-
-    @SuppressWarnings("hiding")
     public class EQUALS<T> implements Iestructuras<T>{
+        
         @Override
-        public void execute(String expresion) {
-            // TODO Auto-generated method stub
-            throw new UnsupportedOperationException("Unimplemented method 'execute'");
+        public Object execute(List<Object> expresion, Environment environment) {
+            if (expresion.size() != 3) {
+                throw new IllegalArgumentException("Para EQUAL solo se compara con 2 operandos, verifique cantidad de elementos.");
+            }
+
+            Object valor1 = expresion.get(1);
+            Object valor2 = expresion.get(2);
+
+            if (valor1 == null || valor2 == null) {
+                return false;
+            }
+
+            if (valor1 instanceof List && valor2 instanceof List) {
+                List<Object> lista1 = (List<Object>) valor1;
+                List<Object> lista2 = (List<Object>) valor2;
+                return lista1.equals(lista2);
+            }else{
+                // Al menos una de las subexpresiones no es lista, utilizar FactoryEstructuras
+                Evaluador evaluador = new Evaluador(environment);
+                Object resultado1 = evaluador.evaluarExpresion((List<Object>) valor1);
+                Object resultado2 = evaluador.evaluarExpresion((List<Object>) valor2);
+                return resultado1.equals(resultado2);
+            }
         }
     }
 
-    @SuppressWarnings("hiding")
-    public class Comparator<T> implements Iestructuras<T>{
-        @Override
-        public void execute(String expresion) {
-            // TODO Auto-generated method stub
-            throw new UnsupportedOperationException("Unimplemented method 'execute'");
+    public class ATOM<T> implements Iestructuras<T>{
+        private T value;
+
+        public ATOM(T value) {
+            this.value = value;
         }
+
+        @Override
+        public Object execute(List<Object> expresion, Environment environment) {
+            return value;
+        }
+
     }
 
-    
-    
-    
 }
