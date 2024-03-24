@@ -1,7 +1,5 @@
 package com.example.Fase2;
 
-import java.util.List;
-
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -26,11 +24,10 @@ class Defun<T> implements Iestructuras<T> {
         }
     }
 
-    public Defun() {
-    }
-
-    public Object execute(List<Object> tokens, Environment environment) {
-        //value = evaluar(environment, tokens);
+    @Override
+    public Object execute(List<Object> expression) {
+        Evaluator evaluador = new Evaluator(environment);
+        value = evaluador.evaluar(environment, expression);
         return value;
 
     }
