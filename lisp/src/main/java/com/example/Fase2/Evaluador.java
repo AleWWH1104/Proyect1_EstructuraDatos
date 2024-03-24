@@ -41,7 +41,6 @@ public class Evaluador {
             Defun<?> funcion = (Defun<?>) estructura;
             funcion.setAttributes(tokens);
             environment.addFunction(funcion.name, funcion);
-            System.out.println("a");
             return "";
         } else {
             // Si no es una clase Defun<T>, sigue con el comportamiento existente

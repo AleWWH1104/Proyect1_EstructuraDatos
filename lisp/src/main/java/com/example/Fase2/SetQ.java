@@ -29,7 +29,7 @@ public class SetQ<T> implements Iestructuras<T> {
     }
 
     private void setVariable(String variableName, Object value, Environment environment) {
-        environment.setVariable(variableName, value);
+        environment.setVariable(variableName, value.toString());
     }
 
 }

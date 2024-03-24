@@ -1,3 +1,6 @@
-(equal 10 (+ 5 5))
-(defun hola (a))
-(hola 1)
+(defun fibonacci (n)
+  (cond
+    ((equal n 0) 0)
+    ((equal n 1) 1)
+    ((> n 1) (+ (fibonacci (- n 1)) (fibonacci (- n 2))))))
+(fibonacci 2)

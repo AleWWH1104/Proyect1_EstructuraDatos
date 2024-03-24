@@ -10,7 +10,6 @@ public class LispInterpreter {
         String expresion = fileManager.leerExpresion(filePath);
         Parser parsear = new Parser();
         List<Object> tokens = parsear.parse(expresion);
-        System.out.println(tokens);
         List<String> results = new ArrayList<>();
         Evaluador evaluador = new Evaluador(new Environment());
         for (Object lista : tokens) {
@@ -19,6 +18,7 @@ public class LispInterpreter {
                 results.add(result.toString());
             }
         }
+        System.err.println(results);
         for (String r : results) {
             System.out.println(r);
         }

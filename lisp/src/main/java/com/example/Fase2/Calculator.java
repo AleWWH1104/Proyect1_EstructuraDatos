@@ -9,7 +9,6 @@ public class Calculator<T> implements Iestructuras<T> {
         if (tokens.isEmpty()) {
             throw new IllegalArgumentException("Expresión vacía.");
         }
-
         Stack<Double> stack = new Stack<>();
         for (int i = tokens.size() - 1; i >= 0; i--) {
             Object token = tokens.get(i);

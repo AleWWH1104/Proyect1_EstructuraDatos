@@ -8,7 +8,6 @@ public class FactoryEstructuras<T extends Number> {
         if (tipo instanceof String) {
             String tokenStr = (String) tipo;
             if (environment.getFunctionMap().containsKey(tokenStr)) {
-                System.out.println("lol");
                 return obtenerCopiaDesdeEnvironment(tokenStr, environment);
             }
             switch (tokenStr) {
@@ -51,10 +50,8 @@ public class FactoryEstructuras<T extends Number> {
         if (function != null) {
             Defun<?> fooCopy = function.clone();
             function.setFuncios(function.name, fooCopy);
-            System.out.println(fooCopy);
-            // return (Iestructuras<T>) function;
+            return (Iestructuras<T>) function;
         } else {
-            System.out.println("xd");
             // Si no se encuentra la función en el Environment, devolvemos null
         }
         return null;

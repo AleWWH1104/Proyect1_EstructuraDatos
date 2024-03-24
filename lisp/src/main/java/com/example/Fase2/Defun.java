@@ -21,7 +21,6 @@ public class Defun<T> implements Iestructuras<T>, Cloneable {
     }
 
     public void setAttributes(List<Object> instructions) {
-        System.out.println(instructions);
         localEnvironment = new Environment();
         this.name = instructions.get(1).toString();
         List<String> params = (List<String>) instructions.get(2);
@@ -36,18 +35,19 @@ public class Defun<T> implements Iestructuras<T>, Cloneable {
         this.instructions = instructions;
     }
 
-    public void setParams(List<Object> valueParams) {
+    public void setParams(List<Object> valueParams, Environment environment) {
         Set<String> keys = params.keySet();
         List<String> keyList = new ArrayList<>(keys);
-        System.out.println(valueParams);
         for (int index = 0; index < valueParams.size(); index++) {
             String key = keyList.get(index);
-            List<Object> result = isList(valueParams.get(index));
-            Object value = execute(result, localEnvironment);
-            params.put(key, value);
+            List<Object> p = isList(valueParams.get(index));
+            Evaluador evaluator = new Evaluador(localEnvironment);
+            Object value = evaluator.evaluarExpresion(p);
+            params.put(key, value.toString());
         }
         Map<String, Object> variables = localEnvironment.getVariableMap();
         variables.putAll(params);
+
     }
 
     private List<Object> isList(Object object) {
@@ -62,9 +62,29 @@ public class Defun<T> implements Iestructuras<T>, Cloneable {
 
     @Override
     public Object execute(List<Object> tokens, Environment environment) {
-        Evaluador evaluator = new Evaluador(environment);
-        result = evaluator.evaluarExpresion(tokens);
-        return result;
+        tokens.remove(0);
+        setParams(tokens, environment);
+        List<Object> results = new ArrayList<>();
+        Evaluador evaluator = new Evaluador(localEnvironment);
+        for (Object instruction : instructions) {
+            if (instructions.size() != 0) {
+                result = evaluator.evaluarExpresion((List<Object>) instruction);
+                if (result != "") {
+                    results.add(result);
+                }
+            } else {
+                results.add("");
+            }
+        }
+        StringBuilder resultsStrings = new StringBuilder();
+        for (int i = 0; i < results.size(); i++) {
+            resultsStrings.append(results.get(i).toString());
+            if (i != results.size() - 1) { // Si no es el último elemento
+                resultsStrings.append("\n");
+            }
+        }
+        return resultsStrings.toString();
+
     }
 
     @Override

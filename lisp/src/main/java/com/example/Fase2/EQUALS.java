@@ -17,15 +17,12 @@ public class EQUALS<T> implements Iestructuras<T> {
         // Evaluar los operandos recursivamente si son listas
         Evaluador evaluador = new Evaluador(environment);
         if (leftOperand instanceof List) {
-            leftOperand = evaluador.evaluarExpresion((List<Object>) leftOperand);
+            leftOperand = evaluador.evaluarExpresion((List<Object>) leftOperand).toString();
         }
         if (rightOperand instanceof List) {
-            rightOperand = evaluador.evaluarExpresion((List<Object>) rightOperand);
+            rightOperand = evaluador.evaluarExpresion((List<Object>) rightOperand).toString();
         }
-
         // Comparar los resultados
-        System.out.println(rightOperand.getClass().getSimpleName());
-        System.out.println(leftOperand.getClass().getSimpleName());
         return leftOperand.equals(rightOperand);
     }
 
