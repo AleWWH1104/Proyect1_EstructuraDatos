@@ -32,11 +32,10 @@ public class FactoryEstructuras<T extends Number> {
                     return new Comparador<>();
                 case "setq":
                     return new SetQ<>();
-                // case "list":
-                //     return new Listas<>();
+                case "list":
+                    return new Listas<>();
                 default:
                     return new Valor<>();
-                    //return new Valor<>();
             }
         } else {
             throw new IllegalArgumentException("Invalid token type");
