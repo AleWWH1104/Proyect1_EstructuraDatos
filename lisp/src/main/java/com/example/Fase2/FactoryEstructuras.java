@@ -1,4 +1,4 @@
-package Fase2;
+package lisp.src.main.java.com.example.Fase2;
 public class FactoryEstructuras<T extends Number> {
 
     // Crea y devuelve una instancia de {InterfaceFactory} basada en la palabra reservada proporcionada.

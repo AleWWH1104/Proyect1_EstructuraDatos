@@ -1,5 +1,4 @@
-package Fase2;
-
+package lisp.src.main.java.com.example.Fase2;
 import java.util.List;
 
 public class Comparador<T> implements Iestructuras<T> {
