@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="0f969f57-16ff-4fd5-aa7c-a91025fc4a94" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/Fase1/CalcAngulos.lisp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/Fase1/Factorial.lisp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/Fase1/Fibonacci.lisp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/Fase2/Atom.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/Fase2/Atom.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/Fase2/Calculator.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/Fase2/Calculator.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/Fase2/Comparador.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/Fase2/Comparador.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/Fase2/Conditions.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/Fase2/Conditions.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/Fase2/Defun.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/Fase2/Defun.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/Fase2/EQUALS.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/Fase2/EQUALS.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/Fase2/Environment.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/Fase2/Environment.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/Fase2/Evaluador.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/Fase2/Evaluador.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/Fase2/FactoryEstructuras.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/Fase2/FactoryEstructuras.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/Fase2/FileManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/Fase2/FileManager.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/Fase2/Iestructuras.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/Fase2/Iestructuras.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/Fase2/LispInterpreter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/Fase2/LispInterpreter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/Fase2/Listas.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/Fase2/Listas.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/Fase2/Parser.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/Fase2/Parser.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/Fase2/Quote.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/Fase2/Quote.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/Fase2/SetQ.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/Fase2/SetQ.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/Fase2/Valor.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/Fase2/Valor.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/Fase2/prueba.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/example/Fase2/testDefunClass.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/example/Fase2/testDefunClass.class" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 6
+}]]></component>
+  <component name="ProjectId" id="2e9ziNSKSBmH9anXFHbt42nHLqw" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "JUnit.AtomTest.executor": "Run",
+    "JUnit.AtomTest.testAtom.executor": "Run",
+    "JUnit.AtomTest.testAtomWithAtom.executor": "Run",
+    "JUnit.AtomTest.testAtomWithEmptyList.executor": "Run",
+    "JUnit.AtomTest.testAtomf.executor": "Run",
+    "JUnit.testDefunClass.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "anggie3",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/anggi/OneDrive/Documentos/Algoritmos/proyecto_estructura/Proyect1_EstructuraDatos",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RunManager" selected="JUnit.AtomTest.testAtomf">
+    <configuration name="AtomTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="lisp" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.Fase2.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.example.Fase2" />
+      <option name="MAIN_CLASS_NAME" value="com.example.Fase2.AtomTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AtomTest.testAtom" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="lisp" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.Fase2.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.example.Fase2" />
+      <option name="MAIN_CLASS_NAME" value="com.example.Fase2.AtomTest" />
+      <option name="METHOD_NAME" value="testAtom" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AtomTest.testAtomWithAtom" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="lisp" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.Fase2.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.example.Fase2" />
+      <option name="MAIN_CLASS_NAME" value="com.example.Fase2.AtomTest" />
+      <option name="METHOD_NAME" value="testAtomWithAtom" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AtomTest.testAtomWithEmptyList" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="lisp" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.Fase2.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.example.Fase2" />
+      <option name="MAIN_CLASS_NAME" value="com.example.Fase2.AtomTest" />
+      <option name="METHOD_NAME" value="testAtomWithEmptyList" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AtomTest.testAtomf" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="lisp" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.Fase2.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.example.Fase2" />
+      <option name="MAIN_CLASS_NAME" value="com.example.Fase2.AtomTest" />
+      <option name="METHOD_NAME" value="testAtomf" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="Proyect1_EstructuraDatos" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="Proyect1_EstructuraDatos" />
+      <option name="filePath" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.AtomTest.testAtomf" />
+        <item itemvalue="JUnit.AtomTest.testAtom" />
+        <item itemvalue="JUnit.AtomTest.testAtomWithAtom" />
+        <item itemvalue="JUnit.AtomTest" />
+        <item itemvalue="JUnit.AtomTest.testAtomWithEmptyList" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="jdk-21.0.2-openjdk-21.0.2-4caba194b151-4f524021" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="0f969f57-16ff-4fd5-aa7c-a91025fc4a94" name="Changes" comment="" />
+      <created>1711331709705</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1711331709705</updated>
+      <workItem from="1711331710589" duration="1763000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>
