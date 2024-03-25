@@ -4,11 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0f969f57-16ff-4fd5-aa7c-a91025fc4a94" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/example/Fase2/ValorTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/example/Fase2/SetQTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/example/Fase2/SetQTest.java" afterDir="false" />
-    </list>
+    <list default="true" id="0f969f57-16ff-4fd5-aa7c-a91025fc4a94" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -27,9 +23,9 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 6
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 6
+}</component>
   <component name="ProjectId" id="2e9ziNSKSBmH9anXFHbt42nHLqw" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -53,7 +49,7 @@
     "JUnit.testDefunClass.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "anggie3",
+    "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/Users/anggi/OneDrive/Documentos/Algoritmos/proyecto_estructura/Proyect1_EstructuraDatos",
     "node.js.detected.package.eslint": "true",
@@ -182,7 +178,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1711331709705</updated>
-      <workItem from="1711331710589" duration="6973000" />
+      <workItem from="1711331710589" duration="7509000" />
     </task>
     <servers />
   </component>
