@@ -1,6 +1,10 @@
 package com.example.Fase2;
-
 import java.util.List;
+/**
+ * Clase que implementa la interfaz Iestructuras para realizar operaciones de comparación.
+ *
+ * @param <T> Tipo de datos genérico para la operación de comparación.
+ */
 
 public class Comparador<T> implements Iestructuras<T> {
 
