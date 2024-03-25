@@ -5,36 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0f969f57-16ff-4fd5-aa7c-a91025fc4a94" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/Fase1/CalcAngulos.lisp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/Fase1/Factorial.lisp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/Fase1/Fibonacci.lisp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/Fase2/Atom.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/Fase2/Atom.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/Fase2/Calculator.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/Fase2/Calculator.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/Fase2/Comparador.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/Fase2/Comparador.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/Fase2/Conditions.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/Fase2/Conditions.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/Fase2/Defun.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/Fase2/Defun.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/Fase2/EQUALS.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/Fase2/EQUALS.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/Fase2/Environment.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/Fase2/Environment.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/Fase2/Evaluador.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/Fase2/Evaluador.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/Fase2/FactoryEstructuras.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/Fase2/FactoryEstructuras.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/Fase2/FileManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/Fase2/FileManager.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/Fase2/Iestructuras.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/Fase2/Iestructuras.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/Fase2/LispInterpreter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/Fase2/LispInterpreter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/Fase2/Listas.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/Fase2/Listas.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/Fase2/Parser.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/Fase2/Parser.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/Fase2/Quote.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/Fase2/Quote.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/Fase2/SetQ.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/Fase2/SetQ.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/Fase2/Valor.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/Fase2/Valor.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/Fase2/prueba.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/example/Fase2/testDefunClass.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/example/Fase2/testDefunClass.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/example/Fase2/CalculatorTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -57,6 +41,7 @@
     "JUnit.AtomTest.testAtomWithAtom.executor": "Run",
     "JUnit.AtomTest.testAtomWithEmptyList.executor": "Run",
     "JUnit.AtomTest.testAtomf.executor": "Run",
+    "JUnit.CalculatorTest.Calculatortest.executor": "Run",
     "JUnit.testDefunClass.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
@@ -71,7 +56,7 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="RunManager" selected="JUnit.AtomTest.testAtomf">
+  <component name="RunManager" selected="JUnit.CalculatorTest.Calculatortest">
     <configuration name="AtomTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="lisp" />
       <extension name="coverage">
@@ -119,22 +104,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="AtomTest.testAtomWithEmptyList" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="lisp" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.example.Fase2.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.example.Fase2" />
-      <option name="MAIN_CLASS_NAME" value="com.example.Fase2.AtomTest" />
-      <option name="METHOD_NAME" value="testAtomWithEmptyList" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="AtomTest.testAtomf" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="lisp" />
       <extension name="coverage">
@@ -146,6 +115,22 @@
       <option name="PACKAGE_NAME" value="com.example.Fase2" />
       <option name="MAIN_CLASS_NAME" value="com.example.Fase2.AtomTest" />
       <option name="METHOD_NAME" value="testAtomf" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CalculatorTest.Calculatortest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="lisp" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.Fase2.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.example.Fase2" />
+      <option name="MAIN_CLASS_NAME" value="com.example.Fase2.CalculatorTest" />
+      <option name="METHOD_NAME" value="Calculatortest" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -166,11 +151,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.CalculatorTest.Calculatortest" />
         <item itemvalue="JUnit.AtomTest.testAtomf" />
         <item itemvalue="JUnit.AtomTest.testAtom" />
         <item itemvalue="JUnit.AtomTest.testAtomWithAtom" />
         <item itemvalue="JUnit.AtomTest" />
-        <item itemvalue="JUnit.AtomTest.testAtomWithEmptyList" />
       </list>
     </recent_temporary>
   </component>
@@ -189,7 +174,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1711331709705</updated>
-      <workItem from="1711331710589" duration="1763000" />
+      <workItem from="1711331710589" duration="2364000" />
     </task>
     <servers />
   </component>
