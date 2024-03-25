@@ -5,7 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0f969f57-16ff-4fd5-aa7c-a91025fc4a94" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/example/Fase2/CalculatorTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/example/Fase2/ComparadorTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/test-classes/com/example/Fase2/ComparadorTest.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -42,6 +43,7 @@
     "JUnit.AtomTest.testAtomWithEmptyList.executor": "Run",
     "JUnit.AtomTest.testAtomf.executor": "Run",
     "JUnit.CalculatorTest.Calculatortest.executor": "Run",
+    "JUnit.ComparadorTest.Comparadorrtest.executor": "Run",
     "JUnit.testDefunClass.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
@@ -56,22 +58,7 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="RunManager" selected="JUnit.CalculatorTest.Calculatortest">
-    <configuration name="AtomTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="lisp" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.example.Fase2.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.example.Fase2" />
-      <option name="MAIN_CLASS_NAME" value="com.example.Fase2.AtomTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="JUnit.ComparadorTest.Comparadorrtest">
     <configuration name="AtomTest.testAtom" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="lisp" />
       <extension name="coverage">
@@ -136,6 +123,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="ComparadorTest.Comparadorrtest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="lisp" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.Fase2.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.example.Fase2" />
+      <option name="MAIN_CLASS_NAME" value="com.example.Fase2.ComparadorTest" />
+      <option name="METHOD_NAME" value="Comparadorrtest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration default="true" type="JetRunConfigurationType">
       <module name="Proyect1_EstructuraDatos" />
       <method v="2">
@@ -151,11 +154,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.ComparadorTest.Comparadorrtest" />
         <item itemvalue="JUnit.CalculatorTest.Calculatortest" />
         <item itemvalue="JUnit.AtomTest.testAtomf" />
         <item itemvalue="JUnit.AtomTest.testAtom" />
         <item itemvalue="JUnit.AtomTest.testAtomWithAtom" />
-        <item itemvalue="JUnit.AtomTest" />
       </list>
     </recent_temporary>
   </component>
@@ -174,7 +177,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1711331709705</updated>
-      <workItem from="1711331710589" duration="2364000" />
+      <workItem from="1711331710589" duration="3370000" />
     </task>
     <servers />
   </component>
