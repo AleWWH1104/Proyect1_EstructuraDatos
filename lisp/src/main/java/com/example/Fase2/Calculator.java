@@ -1,6 +1,9 @@
 package com.example.Fase2;
-
 import java.util.List;
+
+/**
+ * Clase Calculator que implementa la interfaz Iestructuras para ejecutar operaciones matemáticas en notación prefija.
+ */
 
 //Ejecuta la expresión matemática en notación prefija representada por una lista de tokens.
 public class Calculator<T> implements Iestructuras<T> {

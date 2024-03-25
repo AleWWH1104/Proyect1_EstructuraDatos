@@ -11,16 +11,6 @@ import java.util.List;
  */
 public class EQUALS<T> implements Iestructuras<T> {
 
-    /**
-     * Método para ejecutar la operación de igualdad y devolver el resultado.
-     *
-     * @param expresion   Lista que contiene la operación EQUALS y los dos
-     *                    operandos.
-     * @param environment Entorno de ejecución.
-     * @return "T" si los operandos son iguales, "NIL" si son diferentes.
-     * @throws IllegalArgumentException si la expresión no contiene exactamente dos
-     *                                  operandos.
-     */
     @SuppressWarnings("unchecked")
     @Override
     public Object execute(List<Object> expresion, Environment environment) {
