@@ -1,62 +1,45 @@
 package com.example.Fase2;
 import java.util.List;
-import java.util.Stack;
+
+/**
+ * Clase Calculator que implementa la interfaz Iestructuras para ejecutar operaciones matemáticas en notación prefija.
+ */
 
 //Ejecuta la expresión matemática en notación prefija representada por una lista de tokens.
 public class Calculator<T> implements Iestructuras<T> {
+    @SuppressWarnings("unchecked")
     @Override
-    public Double execute(List<Object> tokens, Environment environment) {
-        if (tokens.isEmpty()) {
-            throw new IllegalArgumentException("Expresión vacía.");
+    public Object execute(List<Object> tokens, Environment environment) {
+        // Verificar que la lista de tokens tenga al menos tres elementos
+        if (tokens.size() < 3) {
+            throw new IllegalArgumentException("Comparador operation requires at least two operands and an operator.");
         }
 
-        Stack<Double> stack = new Stack<>();
-        for (int i = tokens.size() - 1; i >= 0; i--) {
-            Object token = tokens.get(i);
-            if (token instanceof String) {
-                String operator = (String) token;
-                if (isOperator(operator)) {
-                    double operand1 = stack.pop();
-                    double operand2 = stack.pop();
-                    double result = applyOperator(operator, operand1, operand2);
-                    stack.push(result);
-                } else {
-                    stack.push(Double.parseDouble(operator));
-                }
-            } else if (token instanceof List<?>) {
-                double result = execute((List<Object>) token, environment);
-                stack.push(result);
-            }
+        // Obtener el operador y los operandos de la lista de tokens
+        Object operador = tokens.get(0);
+        Object operando1 = tokens.get(1);
+        Object operando2 = tokens.get(2);
+
+        // Evaluar los operandos recursivamente si son listas
+        Evaluador evaluador = new Evaluador(environment);
+        if (operando1 instanceof List) {
+            operando1 = evaluador.evaluarExpresion((List<Object>) operando1);
+        }
+        if (operando2 instanceof List) {
+            operando2 = evaluador.evaluarExpresion((List<Object>) operando2);
         }
 
-        if (stack.size() != 1) {
-            throw new IllegalArgumentException("Expresión inválida.");
-        }
-
-        return stack.pop();
-    }
-
-    //Verifica si un token es un operador matemático válido (+, -, *, /).
-    private boolean isOperator(String token) {
-        return token.equals("+") || token.equals("-") || token.equals("*") || token.equals("/");
-    }
-
-    //Aplica un operador matemático a dos operandos.
-    private double applyOperator(String operator, double operand1, double operand2) {
-        switch (operator) {
-            case "+":
-                return operand1 + operand2;
-            case "-":
-                return operand1 - operand2;
-            case "*":
-                return operand1 * operand2;
-            case "/":
-                if (operand2 == 0) {
-                    throw new ArithmeticException("División por cero.");
-                }
-                return operand1 / operand2;
-            default:
-                throw new IllegalArgumentException("Operador desconocido: " + operator);
+        // Realizar la operación aritmética según el operador
+        if ("+".equals(operador)) {
+            return Double.parseDouble(operando1.toString()) + Double.parseDouble(operando2.toString());
+        } else if ("-".equals(operador)) {
+            return Double.parseDouble(operando1.toString()) - Double.parseDouble(operando2.toString());
+        } else if ("*".equals(operador)) {
+            return Double.parseDouble(operando1.toString()) * Double.parseDouble(operando2.toString());
+        } else if ("/".equals(operador)) {
+            return Double.parseDouble(operando1.toString()) / Double.parseDouble(operando2.toString());
+        } else {
+            throw new IllegalArgumentException("Operador de aritmética no válido: " + operador);
         }
     }
 }

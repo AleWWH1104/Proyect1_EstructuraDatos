@@ -8,9 +8,14 @@ package com.example.Fase2;
  */
 public class FactoryEstructuras<T extends Number> {
 
-    public Iestructuras<T> crearImplementacion(Object tipo) {
+    // Crea y devuelve una instancia de {InterfaceFactory} basada en la palabra
+    // reservada proporcionada.
+    public Iestructuras<T> crearImplementacion(Object tipo, Environment environment) {
         if (tipo instanceof String) {
             String tokenStr = (String) tipo;
+            if (environment.getFunctionMap().containsKey(tokenStr)) {
+                return obtenerCopiaDesdeEnvironment(tokenStr, environment);
+            }
             switch (tokenStr) {
                 case "defun":
                     return new Defun<>();
@@ -45,5 +50,20 @@ public class FactoryEstructuras<T extends Number> {
         } else {
             throw new IllegalArgumentException("Token invalido");
         }
+    }
+
+    // Método para obtener una copia del objeto desde el Environment si el token es
+    // una función definida
+    @SuppressWarnings("unchecked")
+    private Iestructuras<T> obtenerCopiaDesdeEnvironment(String token, Environment environment) {
+        Defun<?> function = environment.getFunctionMap().get(token);
+        if (function != null) {
+            Defun<?> fooCopy = function.clone();
+            function.setFuncios(function.name, fooCopy);
+            return (Iestructuras<T>) function;
+        } else {
+            // Si no se encuentra la función en el Environment, devolvemos null
+        }
+        return null;
     }
 }

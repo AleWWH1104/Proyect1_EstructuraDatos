@@ -1,14 +1,21 @@
 package com.example.Fase2;
+
 import java.util.List;
 
-/* Compara la igualdad de dos operandos y devuelve "T" si son iguales, o "NIL" si son diferentes.*/
+/**
+ * Esta clase representa una estructura que compara la igualdad de dos
+ * operandos.
+ * Devuelve "T" si son iguales, o "NIL" si son diferentes.
+ *
+ * @param <T> Tipo genérico para la estructura EQUALS.
+ */
 public class EQUALS<T> implements Iestructuras<T> {
 
     @SuppressWarnings("unchecked")
     @Override
     public Object execute(List<Object> expresion, Environment environment) {
         if (expresion.size() != 3) {
-            throw new IllegalArgumentException("EQUALS operation requires exactly two operands.");
+            throw new IllegalArgumentException("La operación EQUALS requiere exactamente dos operandos.");
         }
 
         Object leftOperand = expresion.get(1);
@@ -17,21 +24,13 @@ public class EQUALS<T> implements Iestructuras<T> {
         // Evaluar los operandos recursivamente si son listas
         Evaluador evaluador = new Evaluador(environment);
         if (leftOperand instanceof List) {
-            leftOperand = evaluador.evaluarExpresion((List<Object>) leftOperand);
+            leftOperand = evaluador.evaluarExpresion((List<Object>) leftOperand).toString();
         }
         if (rightOperand instanceof List) {
-            rightOperand = evaluador.evaluarExpresion((List<Object>) rightOperand);
+            rightOperand = evaluador.evaluarExpresion((List<Object>) rightOperand).toString();
         }
-
-        // Convertir a String si son Double
-        if (leftOperand instanceof Double) {
-            leftOperand = Double.toString((Double) leftOperand);
-        }
-        if (rightOperand instanceof Double) {
-            rightOperand = Double.toString((Double) rightOperand);
-        }
-
-       // Verificar si los operandos son iguales y devolver T o NIL
-       return leftOperand.equals(rightOperand) ? "T" : "NIL";
+        // Comparar los resultados
+        return leftOperand.equals(rightOperand);
     }
+
 }
