@@ -1,0 +1,17 @@
+(
+    defun factorial (num)
+        (cond 
+        ((= num 0) 1)
+        ((> num 0) (* num (factorial (- num 1))))
+        )
+)
+(
+    defun hola (num)
+        (+ 1 num)
+        (- 1 num)
+        (* 1 num)
+        (/ 1 num)
+)
+(factorial 5)
+(atom 4)
+(hola 5)
